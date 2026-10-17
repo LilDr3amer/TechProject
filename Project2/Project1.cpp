@@ -2,7 +2,7 @@
 #include <iomanip>
 using namespace std;
 
-int findMin(int numbers[], int size) {
+int findMin(int numbers[], int size) { //поиск минимального
     int min = numbers[0];
     for (int i = 1; i < size; i++) {
         if (numbers[i] < min) {
@@ -12,7 +12,7 @@ int findMin(int numbers[], int size) {
     return min;
 }
 
-int findMax(int numbers[], int size) {
+int findMax(int numbers[], int size) { //поиск максимального
     int max = numbers[0];
     for (int i = 1; i < size; i++) {
         if (numbers[i] > max) {
@@ -22,7 +22,7 @@ int findMax(int numbers[], int size) {
     return max;
 }
 
-double findAverage(int arr[], int size ) {
+double findAverage(int arr[], int size ) { //среднее арифметическое
     int sum = 0;
     for (int i = 0; i < size; i++) {
         sum += arr[i];
@@ -34,16 +34,16 @@ int main() {
     setlocale(LC_ALL, "rus");
     int size;
      cout << "Введите размер массива от 1 до 10: \n";
-     while (!(cin >> size) || size <= 0 || size > 10) {
+     while (!(cin >> size) || size <= 0 || size > 10) {             //проверка на правильность числа
          cout << "Введите положительное число 1 до 10: \n";
-         cin.clear();
-         cin.ignore(10000, '\n');
+         cin.clear();                                               //убирает ошибку
+         cin.ignore(10000, '\n');                                   //выбрасывает мусор из буфера
      }
 
      int* numbers = new int[size];
      cout << "Введите " << size << " целых положительных чисел:\n\n";
 
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i < size; ++i) {                                //заполнение массива с последующими проверками
         int value;
         bool valid = false;
          while (!valid) {
